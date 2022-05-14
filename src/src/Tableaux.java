@@ -30,10 +30,24 @@ public class Tableaux {
 		tabDimVariables[1] = new int[1];
 		tabDimVariables[2] = new int[2];
 		tabDimVariables[3] = new int[3];
+		tabDimVariables[0][0] = 1;
+		tabDimVariables[0][1] = 2;
+		tabDimVariables[1][0] = 3;
+		tabDimVariables[2][0] = 4;
+		tabDimVariables[2][1] = 5;
+		tabDimVariables[3][0] = 6;
+		tabDimVariables[3][1] = 7;
+		tabDimVariables[3][2] = 8;
 //		System.out.println(tabDimVariables[0].length);
 //		System.out.println(tabDimVariables[1].length);
 //		System.out.println(tabDimVariables[2].length);
 //		System.out.println(tabDimVariables[3].length);
 //		System.out.println(tabDimVariables.length);
+		
+		for(int[] i : tabDimVariables) {
+			for(int j : i) {
+				System.out.println(j);
+			}
+		}
 	}
 }
