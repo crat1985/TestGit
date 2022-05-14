@@ -214,6 +214,7 @@ public class Programme{
 		}
 		Tableaux.Tableaux();
 		Characters.Characters();
+		ChainesDeCaracteres.ChainesDeCaracteres();
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
