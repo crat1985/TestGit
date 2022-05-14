@@ -24,5 +24,16 @@ public class Tableaux {
 		int[][] tab2dimensions = new int[2][2];
 		tab2dimensions[0][0] = 89;
 		int[][][][] tab3dimensions = new int[2][2][2][2]; //Encore ! Ca fait beaucoup là non ?
+		//tableau à dimensions variables
+		int[][] tabDimVariables = new int[4][];
+		tabDimVariables[0] = new int[2];
+		tabDimVariables[1] = new int[1];
+		tabDimVariables[2] = new int[2];
+		tabDimVariables[3] = new int[3];
+//		System.out.println(tabDimVariables[0].length);
+//		System.out.println(tabDimVariables[1].length);
+//		System.out.println(tabDimVariables[2].length);
+//		System.out.println(tabDimVariables[3].length);
+//		System.out.println(tabDimVariables.length);
 	}
 }
