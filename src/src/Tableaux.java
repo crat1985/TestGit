@@ -17,8 +17,12 @@ public class Tableaux {
 		System.out.println("taille : "+tab.length); //pas de parenthèses pour length sauf pour les String
 		Arrays.sort(tab);//par défaut par ordre alphabétique ou croissant
 		
-		for(int i = 0;i<tab.length;i++) {
-			System.out.println(tab[i]);
-		}
+//		for(int i = 0;i<tab.length;i++) {
+//			System.out.println(tab[i]);
+//		}
+		
+		int[][] tab2dimensions = new int[2][2];
+		tab2dimensions[0][0] = 89;
+		int[][][][] tab3dimensions = new int[2][2][2][2]; //Encore ! Ca fait beaucoup là non ?
 	}
 }
