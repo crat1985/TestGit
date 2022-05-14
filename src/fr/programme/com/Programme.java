@@ -195,7 +195,6 @@ public class Programme{
 		//Condition ternaire
 		int a = 1;
 		int b = 1;
-		
 		int var = a > b ? 1 : a==b ? 2 : 0;
 		System.out.println(var);
 		System.out.println(a>b?"a>b":"a<b");
