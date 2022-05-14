@@ -43,7 +43,6 @@ public class Tableaux {
 //		System.out.println(tabDimVariables[2].length);
 //		System.out.println(tabDimVariables[3].length);
 //		System.out.println(tabDimVariables.length);
-		
 		for(int[] i : tabDimVariables) {
 			for(int j : i) {
 				System.out.println(j);
