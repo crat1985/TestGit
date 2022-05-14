@@ -1,5 +1,9 @@
 package fr.programme.com;
 
+import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import src.*;
 
 public class Programme{
@@ -148,6 +152,67 @@ public class Programme{
 				.build();
 		System.out.printf("Nom : %s\nAge : %d\nIsSterilised : %b\nOwner : %s\n", Carla.getName(), Carla.getAge(), Carla.getIsSterilised(), Carla.getOwner());
 		System.out.println(Elea.getFirstName()+" "+Elea.getLastName());
+		Account2<Character> giovanni = new Account2("Giovanni", 1000, '€');
+		Account2<String> riccardo = new Account2("Riccardo", 2000, " euros");
+		System.out.println(giovanni.getAmount());
+		System.out.println(riccardo.getAmount());
+		giovanni.transfertMoneyTo(riccardo, 10);
+		System.out.println(giovanni.getAmount());
+		System.out.println(riccardo.getAmount());
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.print("Entrez votre pseudo : ");
+//		while(scanner.hasNext()) {
+//			pseudo += scanner.next();
+//			pseudo += " ";
+//			System.out.println(pseudo);
+//		}
+//		String pseudo = scanner.nextLine();
+//		System.out.printf(">%s<\n",pseudo);
+//		boolean b = false;
+//		while(!b) {
+//			System.out.println("ok");
+//		}
+		for(int loop = 0;loop<10;loop++) {
+			System.out.println(loop+1);
+		}
+//		Timer timer = new Timer();
+//		timer.schedule(new TimerTask() {
+//			
+//			@Override
+//			public void run() {
+//				//Boucle infinie
+//				for(;;) {
+//					System.err.println("C'était une mauvaise idée !!!");
+//					break;
+//				}
+//			}
+//		}, 1000);
+//		CustomException ce = new CustomException("T'as vraiment cru qu'il y avait une erreur ? XD");
+//		ce.printStackTrace();
+		for(int i = 0,j=3;i<10&&/*ou||*/j<18;i++,j+=3) {
+			System.out.println(i+" - "+j);
+		}
+		//Condition ternaire
+		int a = 1;
+		int b = 1;
+		
+		int var = a > b ? 1 : a==b ? 2 : 0;
+		System.out.println(var);
+		System.out.println(a>b?"a>b":"a<b");
+		int age = 16;
+		switch (age) {
+			case 15:
+				System.out.println("Même age que le mien !");
+				break;
+			case 16:
+				System.out.println("Un an de plus que moi !");
+				break;
+			case 17: case 18:
+				System.out.println("17-18 jsp XD");
+			default:
+//				throw new IllegalArgumentException("Unexpected value: " + age);
+				System.out.println("jsp");
+		}
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
