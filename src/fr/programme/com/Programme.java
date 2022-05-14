@@ -212,6 +212,7 @@ public class Programme{
 //				throw new IllegalArgumentException("Unexpected value: " + age);
 				System.out.println("jsp");
 		}
+		Tableaux.Tableaux();
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
