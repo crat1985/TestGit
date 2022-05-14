@@ -1,1 +1,1 @@
-# Un programme qui ne fait rien XD
+# Un programme qui me sert juste à apprendre

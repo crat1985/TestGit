@@ -213,6 +213,7 @@ public class Programme{
 				System.out.println("jsp");
 		}
 		Tableaux.Tableaux();
+		Characters.Characters();
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
