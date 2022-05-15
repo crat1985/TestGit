@@ -14,7 +14,7 @@ public class Characters {
 		if('a'<='z') { //selon table ASCII
 			
 		}
-		System.out.println('a'<='z' ? "vrai" : "false");
+		System.out.println('a'<='z' ? "vrai" : "faux");
 		
 		String str = "651VYUVYjbf### juhb f";
 		System.out.println(str.charAt(11));

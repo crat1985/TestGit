@@ -103,7 +103,7 @@ public class Programme{
 //			
 //			@Override
 //			public void onFinish() {
-//				System.out.println("Chronp stoppé avec le code de sortie 1 (en vrai jsp quel code de sortie mais c'est pour faire genre que c'est un truc stylé XD)");
+//				System.out.println("Chrono stoppé avec le code de sortie 1 (en vrai jsp quel code de sortie mais c'est pour faire genre que c'est un truc stylé XD)");
 //			}
 //		});
 		Player2 player3 = new Player2("Graven");
@@ -150,7 +150,7 @@ public class Programme{
 				.withIsSterilised(true)
 				.withOwner("Karine ROUX")
 				.build();
-		System.out.printf("Nom : %s\nAge : %d\nIsSterilised : %b\nOwner : %s\n", Carla.getName(), Carla.getAge(), Carla.getIsSterilised(), Carla.getOwner());
+		System.out.printf("Nom : %s\nAge : %d\nSterilisée : %s\nOwner : %s\n", Carla.getName(), Carla.getAge(), Carla.getIsSterilised() ? "stérilisée" : "pas stérilisée", Carla.getOwner());
 		System.out.println(Elea.getFirstName()+" "+Elea.getLastName());
 		Account2<Character> giovanni = new Account2("Giovanni", 1000, '€');
 		Account2<String> riccardo = new Account2("Riccardo", 2000, " euros");
