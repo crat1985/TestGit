@@ -6,13 +6,6 @@ public class User {
 	private String phone;
 	private String address;
 	
-//	public User(String lastName, String firstName, String phone, String address) {
-//		this.lastName = lastName;
-//		this.firstName = firstName;
-//		this.phone = phone;
-//		this.address = address;
-//	}
-	
 	public static class UserBuilder{
 		private String lastName = "<non défini>";
 		private String firstName = "<non défini>";

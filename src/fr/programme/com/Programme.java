@@ -1,5 +1,6 @@
 package fr.programme.com;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -115,7 +116,7 @@ public class Programme{
 		Account<String> otherAccount = new Account<String>("Bob", 200, " euros");
 		otherAccount.showBalance();
 		
-		Bank bank = new Bank("Ric&CieBank");
+		Bank bank = new Bank("Bank");
 		bank.transfert(myAccount, otherAccount, 25);
 		bank.transfert(otherAccount, myAccount, 25);
 		Compare.Compare();
@@ -215,6 +216,50 @@ public class Programme{
 		Tableaux.Tableaux();
 		Characters.Characters();
 		ChainesDeCaracteres.ChainesDeCaracteres();
+		Personnage test1 = new Personnage(15,167,"Riccardo");
+		CatTP testtkt = new CatTPBuilder()
+				.withAge(2)
+				.withIsSterilised(true)
+				.withName("Carla")
+				.withOwner("Karine ROUX")
+				.build();
+		System.out.println(testtkt.getAge());
+		Personnage deBase = new Personnage();
+		Account2<String> testjspmaistkt = new Account2<String>("Ric", 0, " euros");
+		System.out.println("--------------------------------");
+		for(Account2<String> i : Account2.getListOfAccountsTypeString()) {
+			System.out.println(i.getOwner());
+		}
+		System.out.println("--------------------------------");
+//		System.out.println(Account2.getListOfAccountsTypeString().get(0).getOwner());
+		Account2<String> testjsppkmaistkt = new Account2<String>("Riccardo", 1000, " euros");
+		System.out.println(testjsppkmaistkt.getOwner());
+		testjsppkmaistkt.setNameBecauseIncorect("Ric");
+		System.out.println(testjsppkmaistkt.getOwner());
+		testjsppkmaistkt.setNameBecauseIncorect("Ric2.0");
+		System.out.println(testjsppkmaistkt.getOwner());
+		PersoSwag persoSwag = new PersoSwag();
+		System.out.println(testjsppkmaistkt.getAmount());
+		System.out.println(riccardo.getAmount());
+		testjsppkmaistkt.transfertMoneyToOwner("Riccardo", -1);
+		System.out.println(testjsppkmaistkt.getAmount());
+		System.out.println(riccardo.getAmount());
+	}
+	public static class Personnage{
+		private int age;
+		private int taille;
+		private String name;
+		//Constructeur
+		public Personnage(int age, int taille, String name) {
+			this.age = age;
+			this.taille = taille;
+			this.name = name;
+			
+			System.out.println(this.age+" - "+this.taille+" - "+this.name);
+		}
+		public Personnage() {
+			this(15,175,"Riccardo");
+		}
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
