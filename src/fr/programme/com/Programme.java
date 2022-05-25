@@ -254,6 +254,10 @@ public class Programme{
 		//System.gc(); //essaie de supprimer tous les objets morts DECONSEILLE
 		Exceptions2.launch();
 		Personnage persoErroredXD = new Personnage(15,0,"Moi XD");
+		Twingo twingo = new Twingo("Twingo");
+		twingo.say("slt");
+		Vehicule v1 = new Twingo();
+		v1.utilité();
 	}
 	public Programme(){
 		System.out.println("Un programme lol");
@@ -264,7 +268,10 @@ public class Programme{
 		private String name;
 		//Constructeur
 		public Personnage(int age, int taille, String name) throws TailleException {
-			if(taille<=0) throw new TailleException();
+//			if(taille<=0) throw new TailleException();
+//			else this.taille = taille;
+			if(taille<=0) {TailleException e = new TailleException();
+			e.printStackTrace();}
 			else this.taille = taille;
 			this.age = age;
 			this.name = name;
@@ -291,7 +298,62 @@ public class Programme{
 		}
 	}
 	private static abstract class Vehicule{
-		protected abstract void deplacement();
+		protected double taille;
+		protected abstract String déplacement();
+		protected void utilité() {
+			System.out.println("Sert à se déplacer d'un point A à un point B en "+déplacement().toLowerCase()+" !");
+		}
+		public double getTaille() {
+			return taille;
+		}
+	}
+	private static abstract class Car extends Vehicule{
+		protected String type = "Voiture";
+		protected boolean canFly = false;
+		protected String mark;
+		protected String name;
+		
+		protected void say(String msg) {
+			System.out.println(this.name+"\""+msg+"\"");
+		}
+		protected void say() {
+			System.out.println(this.name+"\"Hello World\"");
+		}
+	}
+	private static class Twingo extends Car{
+		public Twingo(String name) {
+			this.name = name;
+			this.taille = 3;
+			this.mark = "Twingo";
+			System.out.println(name+" créé(e) !");
+		}
+		
+		public Twingo() {
+			this("Twingo");
+		}
+		
+		@Override
+		protected String déplacement() {
+			return "Roulant";
+		}
+	}
+	private static class Lodgy extends Car{
+		public Lodgy(String name) {
+			this.name = name;
+			this.taille = 4.5;
+			this.mark = "Lodgy";
+			System.out.println(this.name+" créée !");
+		}
+		
+		public Lodgy() {
+			this("Lodgy");
+		}
+
+		@Override
+		protected String déplacement() {
+			return "Roulant";
+		}
+		
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
