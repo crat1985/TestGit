@@ -9,6 +9,13 @@ public class Account2<T> {
 	private static ArrayList<String> listOfAccountsNames = new ArrayList();
 	private static ArrayList<Account2<String>> listOfAccountsTypeString = new ArrayList<Account2<String>>();
 	private static ArrayList<Account2<Character>> listOfAccountsTypeChar = new ArrayList<Account2<Character>>();
+	//se lance lors de la création de l'objet
+	//static
+	static {
+		int abc = 0;
+		System.out.println("Compte créé !");
+	}
+	
 	private static boolean NameIsValid(String owner) {
 		boolean isValid = true;
 		if(owner==null) {

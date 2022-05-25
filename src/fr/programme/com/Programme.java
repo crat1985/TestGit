@@ -10,7 +10,7 @@ import src.*;
 public class Programme{
 
 	private static boolean startTimer2 = false;
-	public static void main(String[] args){
+	public static void main(String[] args) throws TailleException{
 		
 		Player player1 = new Player("RIC21000", 20, 300);
 		System.out.println("name : "+player1.getName());
@@ -238,28 +238,60 @@ public class Programme{
 		System.out.println(testjsppkmaistkt.getOwner());
 		testjsppkmaistkt.setNameBecauseIncorect("Ric2.0");
 		System.out.println(testjsppkmaistkt.getOwner());
-		PersoSwag persoSwag = new PersoSwag();
 		System.out.println(testjsppkmaistkt.getAmount());
 		System.out.println(riccardo.getAmount());
 		testjsppkmaistkt.transfertMoneyToOwner("Riccardo", -1);
 		System.out.println(testjsppkmaistkt.getAmount());
 		System.out.println(riccardo.getAmount());
+		PersoSwag persoSwag = new PersoSwag(15,200,"UnPersoSwagXD",42);
+		persoSwag.test();
+		Programme programme = new Programme();
+		PolymorphismeClasseMere pcm = new PolymorphismeClasseMere("test");
+		Exception e = new Exception("ERREUR !!! (C'est faux XD)");
+		e.printStackTrace();
+		//PersoSwag persoSwag2 = persoSwag ne recréé pas l'objet, il créé juste une référence
+		persoSwag = null; //supprime l'instance si pas dans un tableau ni rien
+		//System.gc(); //essaie de supprimer tous les objets morts DECONSEILLE
+		Exceptions2.launch();
+		Personnage persoErroredXD = new Personnage(15,0,"Moi XD");
+	}
+	public Programme(){
+		System.out.println("Un programme lol");
 	}
 	public static class Personnage{
 		private int age;
 		private int taille;
 		private String name;
 		//Constructeur
-		public Personnage(int age, int taille, String name) {
+		public Personnage(int age, int taille, String name) throws TailleException {
+			if(taille<=0) throw new TailleException();
+			else this.taille = taille;
 			this.age = age;
-			this.taille = taille;
 			this.name = name;
 			
 			System.out.println(this.age+" - "+this.taille+" - "+this.name);
 		}
-		public Personnage() {
+		public Personnage() throws TailleException {
 			this(15,175,"Riccardo");
 		}
+		protected void test() {
+			System.out.println("TEST PASSED !");
+		}
+	}
+	private static class Exceptions2{
+		private static void launch() {
+			try {
+				System.out.println(0/0);
+			} catch(NullPointerException | ArithmeticException e) { //On peut mettre Exception pour toutes les exceptions
+				e.printStackTrace();
+			} finally {
+				System.out.println("Unknown error !");
+			}
+			System.out.println("slt");
+		}
+	}
+	private static abstract class Vehicule{
+		protected abstract void deplacement();
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
