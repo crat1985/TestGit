@@ -1,5 +1,6 @@
 package fr.programme.com;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Timer;
@@ -9,6 +10,17 @@ import src.*;
 
 public class Programme{
 
+//	public static final String ANSI_RESET = "\u001B[0m";
+//	public static final String ANSI_BLACK = "\u001B[30m";
+//	public static final String ANSI_RED = "\u001B[31m";
+//	public static final String ANSI_GREEN = "\u001B[32m";
+//	public static final String ANSI_YELLOW = "\u001B[33m";
+//	public static final String ANSI_BLUE = "\u001B[34m";
+//	public static final String ANSI_PURPLE = "\u001B[35m";
+//	public static final String ANSI_CYAN = "\u001B[36m";
+//	public static final String ANSI_WHITE = "\u001B[37m";
+
+	
 	private static boolean startTimer2 = false;
 	public static void main(String[] args) throws TailleException{
 		
@@ -258,7 +270,29 @@ public class Programme{
 		twingo.say("slt");
 		Vehicule v1 = new Twingo();
 		v1.utilité();
+		Vehicule[] ve = new Vehicule[3];
+		ve[0] = new Lodgy();
+		System.out.println(ve[0].getName());
+		ve[1] = new Twingo();
+		ve[2] = new Vélo();
+		for(Vehicule v : ve) {
+			if(v instanceof Motorisé) {
+				((Motorisé) v).vidanger();
+			}
+		}
+		Couleur blue = Couleur.BLUE;
+
+//		System.out.println(ANSI_BLUE+"slt");
+		
+		
 	}
+	
+	
+	
+	
+	
+	
+	
 	public Programme(){
 		System.out.println("Un programme lol");
 	}
@@ -300,6 +334,10 @@ public class Programme{
 	private static abstract class Vehicule{
 		protected double taille;
 		protected abstract String déplacement();
+		protected String name;
+		protected String getName() {
+			return name;
+		}
 		protected void utilité() {
 			System.out.println("Sert à se déplacer d'un point A à un point B en "+déplacement().toLowerCase()+" !");
 		}
@@ -311,8 +349,6 @@ public class Programme{
 		protected String type = "Voiture";
 		protected boolean canFly = false;
 		protected String mark;
-		protected String name;
-		
 		protected void say(String msg) {
 			System.out.println(this.name+"\""+msg+"\"");
 		}
@@ -337,7 +373,7 @@ public class Programme{
 			return "Roulant";
 		}
 	}
-	private static class Lodgy extends Car{
+	private static class Lodgy extends Car implements Motorisé{
 		public Lodgy(String name) {
 			this.name = name;
 			this.taille = 4.5;
@@ -353,7 +389,33 @@ public class Programme{
 		protected String déplacement() {
 			return "Roulant";
 		}
+
+		@Override
+		public void vidanger() {
+			System.out.println("Huile du moteur changée !");
+		}
 		
+	}
+	protected static class Voiture extends Vehicule implements Motorisé{
+		protected Voiture() {
+			System.out.println("Voiture créée");
+			this.taille = 5;
+		}
+		@Override
+		public void vidanger() {
+			System.out.println("Huile du moteur changée !");
+		}
+		@Override
+		protected String déplacement() {
+			return "Roulant";
+		}
+	}
+	protected static class Vélo extends Vehicule{
+
+		@Override
+		protected String déplacement() {
+			return "Roulant";
+		}
 	}
 //	public static void startTimer() {
 //		startTimer2 = true;
